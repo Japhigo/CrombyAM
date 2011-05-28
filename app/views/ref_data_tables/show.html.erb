@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Table name:</b>
+  <%= @ref_data_table.table_name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @ref_data_table.description %>
+</p>
+
+<p>
+  <b>Code mandatory:</b>
+  <%= @ref_data_table.code_mandatory %>
+</p>
+
+<p>
+  <b>Code min length:</b>
+  <%= @ref_data_table.code_min_length %>
+</p>
+
+<p>
+  <b>Code max length:</b>
+  <%= @ref_data_table.code_max_length %>
+</p>
+
+<p>
+  <b>Code format:</b>
+  <%= @ref_data_table.code_format %>
+</p>
+
+<p>
+  <b>Description mandatory:</b>
+  <%= @ref_data_table.description_mandatory %>
+</p>
+
+<p>
+  <b>Created by:</b>
+  <%= @ref_data_table.created_by %>
+</p>
+
+<p>
+  <b>Created at:</b>
+  <%= @ref_data_table.created_at %>
+</p>
+
+<p>
+  <b>Updated by:</b>
+  <%= @ref_data_table.updated_by %>
+</p>
+
+<p>
+  <b>Updated at:</b>
+  <%= @ref_data_table.updated_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_ref_data_table_path(@ref_data_table) %> |
+<%= link_to 'Back', ref_data_tables_path %>

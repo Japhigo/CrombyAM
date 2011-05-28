@@ -1,7 +1,7 @@
 login: &login
   adapter: jdbcpostgresql
-  username: user_am
-  password: user_am
+  username: baron
+  password: baron
   pool: 5
   timeout: 5000
 

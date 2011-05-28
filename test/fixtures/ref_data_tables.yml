@@ -1,0 +1,27 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  table_name: MyString
+  description: MyString
+  code_mandatory: false
+  code_min_length: 1
+  code_max_length: 1
+  code_format: MyString
+  description_mandatory: false
+  created_by: MyString
+  created_at: 2011-05-28 15:26:30
+  updated_by: MyString
+  updated_at: 2011-05-28 15:26:30
+
+two:
+  table_name: MyString
+  description: MyString
+  code_mandatory: false
+  code_min_length: 1
+  code_max_length: 1
+  code_format: MyString
+  description_mandatory: false
+  created_by: MyString
+  created_at: 2011-05-28 15:26:30
+  updated_by: MyString
+  updated_at: 2011-05-28 15:26:30
