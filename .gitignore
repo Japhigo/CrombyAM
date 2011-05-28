@@ -1,8 +1,9 @@
+.bundle
 nbproject
+CrombyAM.tmproj
 log/*.log
-tmp/**/*
-config/database.yml
-db/**/*
+tmp/
+db/
 public/javascripts/all.js
 public/stylesheets/all.css
 *.orig
