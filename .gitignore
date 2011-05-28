@@ -2,7 +2,7 @@ nbproject
 log/*.log
 tmp/**/*
 config/database.yml
-db/schema.rb
+db/**/*
 public/javascripts/all.js
 public/stylesheets/all.css
 *.orig
