@@ -1,0 +1,13 @@
+Cromby Administration Module
+----------------------------
+
+Developed on Rails v3.0.7 and JRuby 1.6.2
+
+Status: In development.
+
+Instructions
+
+Do not run any migrations.  See CrombyDB for database build scripts.
+
+This project is designed to run against Postgresql.
+

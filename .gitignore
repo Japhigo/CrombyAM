@@ -1,0 +1,14 @@
+nbproject
+log/*.log
+tmp/**/*
+config/database.yml
+db/schema.rb
+public/javascripts/all.js
+public/stylesheets/all.css
+*.orig
+
+# Other useful tidbits
+
+.DS_Store
+doc/api
+doc/app 
