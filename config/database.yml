@@ -1,0 +1,18 @@
+login: &login
+  adapter: jdbcpostgresql
+  username: user_am
+  password: user_am
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *login
+  database: cromby_development
+
+test:
+  <<: *login
+  database: cromby_test
+
+production:
+  <<: *login
+  database: cromby_production
