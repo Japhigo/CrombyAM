@@ -11,7 +11,7 @@
     </tr>
 
   <% @ref_data_tables.each do |ref_data_table| %>
-    <tr>
+    <tr class="<%= cycle('index-line-odd', 'index-line-even') %>">
       <td><%= ref_data_table.table_name %></td>
       <td><%= ref_data_table.description %></td>
       <td><%= link_to 'View', ref_data_table %></td>

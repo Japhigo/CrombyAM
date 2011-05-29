@@ -1,0 +1,40 @@
+/* Global Styles */
+
+body {
+    font-family: tahoma, verdana, arial, helvetica, sans_serif;
+}
+
+a {
+  text-decoration:none;
+}
+
+td {
+    padding-right:5px;
+}
+
+th {
+    padding-right:5px;
+}
+
+textarea:focus, input:focus {
+    background-color: #CCFFFF;
+}
+
+#top-menu p {
+  text-align: right;
+  font-size: small;
+  border-bottom: 1px solid #99CCFF;
+  border-top: 2px solid #99CCFF;
+}
+
+#top-menu a {
+  font-size: small;
+  text-decoration:none;
+}
+
+#lower-menu p {
+  text-align: left;
+  font-size: small;
+  border-top: 1px solid #99CCFF;
+  border-bottom: 2px solid #99CCFF;
+}

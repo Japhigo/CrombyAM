@@ -1,0 +1,8 @@
+root { 
+    display: block;
+}
+
+#ref-edit .title-cell {
+    background-color: #99CCFF;
+    text-align: left;
+}

@@ -1,0 +1,30 @@
+/* Styles for reference data lists */
+
+#ref-index a {
+  font-size: small;
+}
+
+#ref-index th {
+    background-color: #99CCFF;
+    text-align: left;
+}
+
+#ref-index td {
+    text-align: left;
+}
+
+#ref-index .center {
+  text-align: center;
+}
+
+#ref-index .right {
+  text-align: right;
+}
+
+#ref-index .index-line-even {
+  background-color: #CCFFFF;
+}
+
+#ref-index .index-line-odd {
+  background-color: white;
+}
