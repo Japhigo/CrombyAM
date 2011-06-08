@@ -1,0 +1,45 @@
+<%= form_for(@vw_user) do |f| %>
+  <% if @vw_user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@vw_user.errors.count, "error") %> prohibited this vw_user from being saved:</h2>
+
+      <ul>
+      <% @vw_user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :party_person_id %><br />
+    <%= f.text_field :party_person_id %>
+  </div>
+  <div class="field">
+    <%= f.label :user_name %><br />
+    <%= f.text_field :user_name %>
+  </div>
+  <div class="field">
+    <%= f.label :user_uuid %><br />
+    <%= f.text_field :user_uuid %>
+  </div>
+  <div class="field">
+    <%= f.label :hashed_password %><br />
+    <%= f.text_area :hashed_password %>
+  </div>
+  <div class="field">
+    <%= f.label :salt %><br />
+    <%= f.text_area :salt %>
+  </div>
+  <div class="field">
+    <%= f.label :account_locked %><br />
+    <%= f.check_box :account_locked %>
+  </div>
+  <div class="field">
+    <%= f.label :days_until_password_expiry %><br />
+    <%= f.text_field :days_until_password_expiry %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

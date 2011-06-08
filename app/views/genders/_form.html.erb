@@ -1,0 +1,57 @@
+<%= form_for(@gender) do |f| %>
+  <% if @gender.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@gender.errors.count, "error") %> prohibited this gender from being saved:</h2>
+
+      <ul>
+      <% @gender.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :code %><br />
+    <%= f.text_field :code %>
+  </div>
+  <div class="field">
+    <%= f.label :display %><br />
+    <%= f.text_field :display %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :effective_from_date %><br />
+    <%= f.date_select :effective_from_date %>
+  </div>
+  <div class="field">
+    <%= f.label :effective_to_date %><br />
+    <%= f.date_select :effective_to_date %>
+  </div>
+  <div class="field">
+    <%= f.label :created_by %><br />
+    <%= f.text_field :created_by %>
+  </div>
+  <div class="field">
+    <%= f.label :created_at %><br />
+    <%= f.datetime_select :created_at %>
+  </div>
+  <div class="field">
+    <%= f.label :updated_by %><br />
+    <%= f.text_field :updated_by %>
+  </div>
+  <div class="field">
+    <%= f.label :updated_at %><br />
+    <%= f.datetime_select :updated_at %>
+  </div>
+  <div class="field">
+    <%= f.label :data_status_code %><br />
+    <%= f.text_field :data_status_code %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

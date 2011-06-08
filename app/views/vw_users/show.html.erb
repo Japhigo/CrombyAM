@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Party person:</b>
+  <%= @vw_user.party_person_id %>
+</p>
+
+<p>
+  <b>User name:</b>
+  <%= @vw_user.user_name %>
+</p>
+
+<p>
+  <b>User uuid:</b>
+  <%= @vw_user.user_uuid %>
+</p>
+
+<p>
+  <b>Hashed password:</b>
+  <%= @vw_user.hashed_password %>
+</p>
+
+<p>
+  <b>Salt:</b>
+  <%= @vw_user.salt %>
+</p>
+
+<p>
+  <b>Account locked:</b>
+  <%= @vw_user.account_locked %>
+</p>
+
+<p>
+  <b>Days until password expiry:</b>
+  <%= @vw_user.days_until_password_expiry %>
+</p>
+
+
+<%= link_to 'Edit', edit_vw_user_path(@vw_user) %> |
+<%= link_to 'Back', vw_users_path %>

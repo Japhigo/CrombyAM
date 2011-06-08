@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Code:</b>
+  <%= @gender.code %>
+</p>
+
+<p>
+  <b>Display:</b>
+  <%= @gender.display %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @gender.description %>
+</p>
+
+<p>
+  <b>Effective from date:</b>
+  <%= @gender.effective_from_date %>
+</p>
+
+<p>
+  <b>Effective to date:</b>
+  <%= @gender.effective_to_date %>
+</p>
+
+<p>
+  <b>Created by:</b>
+  <%= @gender.created_by %>
+</p>
+
+<p>
+  <b>Created at:</b>
+  <%= @gender.created_at %>
+</p>
+
+<p>
+  <b>Updated by:</b>
+  <%= @gender.updated_by %>
+</p>
+
+<p>
+  <b>Updated at:</b>
+  <%= @gender.updated_at %>
+</p>
+
+<p>
+  <b>Data status code:</b>
+  <%= @gender.data_status_code %>
+</p>
+
+
+<%= link_to 'Edit', edit_gender_path(@gender) %> |
+<%= link_to 'Back', genders_path %>

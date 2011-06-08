@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  party_person_id: 1
+  user_name: MyString
+  user_uuid: MyString
+  hashed_password: MyText
+  salt: MyText
+  account_locked: false
+  days_until_password_expiry: 1
+
+two:
+  party_person_id: 1
+  user_name: MyString
+  user_uuid: MyString
+  hashed_password: MyText
+  salt: MyText
+  account_locked: false
+  days_until_password_expiry: 1

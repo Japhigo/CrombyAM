@@ -1,0 +1,41 @@
+<h1>Listing genders</h1>
+
+<table>
+  <tr>
+    <th>Code</th>
+    <th>Display</th>
+    <th>Description</th>
+    <th>Effective from date</th>
+    <th>Effective to date</th>
+    <th>Created by</th>
+    <th>Created at</th>
+    <th>Updated by</th>
+    <th>Updated at</th>
+    <th>Data status code</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @genders.each do |gender| %>
+  <tr>
+    <td><%= gender.code %></td>
+    <td><%= gender.display %></td>
+    <td><%= gender.description %></td>
+    <td><%= gender.effective_from_date %></td>
+    <td><%= gender.effective_to_date %></td>
+    <td><%= gender.created_by %></td>
+    <td><%= gender.created_at %></td>
+    <td><%= gender.updated_by %></td>
+    <td><%= gender.updated_at %></td>
+    <td><%= gender.data_status_code %></td>
+    <td><%= link_to 'Show', gender %></td>
+    <td><%= link_to 'Edit', edit_gender_path(gender) %></td>
+    <td><%= link_to 'Destroy', gender, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Gender', new_gender_path %>
