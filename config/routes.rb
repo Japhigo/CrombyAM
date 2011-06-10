@@ -2,14 +2,15 @@ CrombyAM::Application.routes.draw do
 
   resources :genders
 
-  resources :ref_data_tables
+  resources :ref_data_tables, :only => [:index, :show, :edit, :update]
 
   resources :vw_users
 
+  match 'exit' => 'sessions#destroy', :as => :logout
+  
   controller :sessions do
     get 'login' => :new
     post 'login' => :create
-    delete 'logout' => :destroy
   end
 
   get "home/index"

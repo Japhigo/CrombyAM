@@ -32,8 +32,6 @@ class SessionsController < ApplicationController
   def get_layout
     if action_name == 'new'
       'login_page'
-    elsif action_name == 'destroy'
-      'logout_page'
     else
       'application'
     end

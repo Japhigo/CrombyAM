@@ -2,12 +2,21 @@ require 'cromby_auth'
 
 class ApplicationController < ActionController::Base
   before_filter :am_authorize
+  
+  helper_method :current_user
+  
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
 
 protected
+
+  def current_user
+    @current_user ||= CrombyAuth.user_name(session[:user_uuid])
+  end
+
+private
 
   def am_authorize
     authorization = CrombyAuth.authorize_user(session[:user_uuid], controller_name)
@@ -20,4 +29,5 @@ protected
       redirect_to :back
     end
   end
+  
 end

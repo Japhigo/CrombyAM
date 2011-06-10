@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: pg_proc.rb</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>pg_proc.rb</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>app/models/pg_proc.rb
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Wed Jun 08 18:11:34 +0100 2011</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+Just for fun and horror: make database functions a part of your Rails
+model! :)
+</p>
+<p>
+Class to access to PostgreSQL functions. Returned value depends on params
+and query result, see below.
+</p>
+<p>
+Currently supported options are:
+</p>
+<pre>
+    :order =&gt; '1 desc' # to add order clause
+    :use_from =&gt; true  # to add &quot;* from&quot; for non-model function queries, which return records
+    :all =&gt; true       # to return not first but all found models
+    :cast =&gt; string    # to cast result (useful for functions, returning +setof record+)
+</pre>
+<p>
+Call-patterns:
+</p>
+<p>
+A) Model loading from functions that return setof system known rowtype
+</p>
+<pre>
+    PgProc.function(ModelClass[, options])
+        PgProc.get_descendants(ContentNode, 123)
+
+    PgProc.function(ModelClass, value[, options ])
+        PgProc.get_children(ContentNode, 123, :order =&gt; 'position', :all =&gt; true)
+</pre>
+<p>
+returns either:
+</p>
+<ul>
+<li>empty array if nothing found
+
+</li>
+<li>first found model object, if found only one and +:all+ option is not set
+
+</li>
+<li>array of model objects
+
+</li>
+</ul>
+<p>
+B) Values from functions
+</p>
+<p>
+PgProc.function(:type_symbol, value, [type_symbol2, value2, &#8230;[,
+options]]) - for explicit parameter typecast
+</p>
+<pre>
+    PgProc.array_append(:&quot;int[]&quot;, '{1,2,3,4}', :int, 5) # =&gt; {1,2,3,4,5}
+</pre>
+<p>
+PgProc.function(*args [, options])
+</p>
+<pre>
+    PgProc.generate_series(1,10,2, :order =&gt; '1 desc') # =&gt; [9,5,7,3,2,1]
+</pre>
+<p>
+PgProc.function() - for functions w/o params
+</p>
+<pre>
+    PgProc.now()
+</pre>
+<p>
+returns either:
+</p>
+<ul>
+<li>empty string for <tt>void</tt> functions
+
+</li>
+<li>single value, if resultset has 1x1 dimension
+
+</li>
+<li>array of values if resultset has Nx1 dimension (N&gt;1)
+
+</li>
+<li>array of rows otherwise
+
+</li>
+</ul>
+<p>
+Throws PGError, if function doesn&#8216;t exist or wrong params supplied
+</p>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

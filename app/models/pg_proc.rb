@@ -1,5 +1,3 @@
-# Just for fun and horror: make database functions a part of your Rails model! :)
-#
 # Class to access to PostgreSQL functions. Returned value depends on params and query result, see below.
 #
 # Currently supported options are:

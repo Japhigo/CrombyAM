@@ -12,7 +12,7 @@
   <body>
     <img src="/images/cromby.png" alt="Cromby - open-source relationship management system" />
     <div id="top-menu">
-      <p>= link_to 'Log out' </p>
+      <p><%= link_to 'Log out', logout_url, :confirm => 'Are you sure?' %></p>
     </div>
 
     <p id="notice"><%= notice %></p>
