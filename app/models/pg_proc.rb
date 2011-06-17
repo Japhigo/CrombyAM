@@ -59,21 +59,21 @@ private
       end
       from_str = " * FROM " if options[:use_from]
       if args.empty?
-        temp = connection.execute("select #{from_str} #{func_name}() #{options[:cast]} #{order_str}")
+        temp = connection.execute("select #{from_str} #{func_name}() #{options[:cast]} #{order_str}", skip_logging = true)
       elsif args.first.is_a?(Class)
         model_klass = args.shift
         if args.length == 0
-          temp = model_klass.find_by_sql("select * from  #{func_name}()  #{options[:cast]} #{order_str}")
+          temp = model_klass.find_by_sql("select * from  #{func_name}()  #{options[:cast]} #{order_str}", skip_logging = true)
         else
-          temp = model_klass.find_by_sql("select * from  #{func_name}(#{quote_bound_value(args)})  #{options[:cast]} #{order_str}")
+          temp = model_klass.find_by_sql("select * from  #{func_name}(#{quote_bound_value(args)})  #{options[:cast]} #{order_str}", skip_logging = true)
         end
         return temp if options[:all]
         return temp.length == 1 ? temp.first : temp
       else
           if args.length % 2 == 0 && args.first.is_a?(Symbol)
-            temp = connection.execute("select #{from_str} #{func_name}(#{quote_bound_value_types(args)}) #{options[:cast]} #{order_str}")
+            temp = connection.execute("select #{from_str} #{func_name}(#{quote_bound_value_types(args)}) #{options[:cast]} #{order_str}", skip_logging = true)
           else
-            temp = connection.execute("select #{from_str} #{func_name}(#{quote_bound_value(args)})  #{options[:cast]} #{order_str}")
+            temp = connection.execute("select #{from_str} #{func_name}(#{quote_bound_value(args)})  #{options[:cast]} #{order_str}", skip_logging = true)
           end
       end
       return temp.first.first if temp.length == 1 && temp.first.length == 1

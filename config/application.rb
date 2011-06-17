@@ -37,6 +37,6 @@ module CrombyAM
     config.encoding = "utf-8"
 
     # Configure sensitive parameters which will be filtered from the log file.
-    config.filter_parameters += [:password]
+    config.filter_parameters += [:password,:hashed_password, :user_uuid, :salt]
   end
 end

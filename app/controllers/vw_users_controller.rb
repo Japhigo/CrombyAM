@@ -1,7 +1,7 @@
 class VwUsersController < ApplicationController
   skip_before_filter :am_authorize
 
-  layout :get_layout
+  layout "login_page"
   
   # GET /vw_users/1/edit
   def edit
@@ -24,11 +24,4 @@ class VwUsersController < ApplicationController
     end
   end
 
-  def get_layout
-    if action_name == 'edit'
-      'login_page'
-    else
-      'application'
-    end
-  end
 end

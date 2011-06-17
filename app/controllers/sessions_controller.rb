@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   skip_before_filter :am_authorize
 
-  layout :get_layout
+  layout "login_page"
   
   def new
   end
@@ -30,14 +30,6 @@ class SessionsController < ApplicationController
   def destroy
     clear_session
     redirect_to login_url, :notice => "Logged out"
-  end
-
-  def get_layout
-    if action_name == 'new'
-      'login_page'
-    else
-      'application'
-    end
   end
 
 private
