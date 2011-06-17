@@ -1,6 +1,48 @@
-<h1>Editing vw_user</h1>
+<div id="ref-edit">
 
-<%= render 'form' %>
+  <h2>Change password</h2>
 
-<%= link_to 'Show', @vw_user %> |
-<%= link_to 'Back', vw_users_path %>
+  <%= form_for(@vw_user) do |f| %>
+    <% if @vw_user.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@vw_user.errors.count, "error") %> prohibited this vw_user from being saved:</h2>
+
+        <ul>
+          <% @vw_user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <table>
+	  <tr>
+		<td class="title-cell"><b>User name</b></td>
+		<td>
+          <%= @vw_user.user_name %>
+        </td>
+      </tr>
+	  <tr>
+		<td class="title-cell"><b><%= f.label :old_password %></b></td>
+		<td>
+          <%= f.password_field :old_password %>
+        </td>
+      </tr>
+	  <tr>
+		<td class="title-cell"><b><%= f.label :new_password %></b></td>
+		<td>
+          <%= f.password_field :new_password %>
+        </td>
+      </tr>
+	  <tr>
+		<td class="title-cell"><b><%= f.label :new_password_confirmation %></b></td>
+		<td>
+          <%= f.password_field :new_password_confirmation %>
+        </td>
+      </tr>
+    </table>
+
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+
+<% end %>

@@ -4,7 +4,7 @@ CrombyAM::Application.routes.draw do
 
   resources :ref_data_tables, :only => [:index, :show, :edit, :update]
 
-  resources :vw_users
+  resources :vw_users, :only => [:edit, :update]
 
   match 'exit' => 'sessions#destroy', :as => :logout
   
