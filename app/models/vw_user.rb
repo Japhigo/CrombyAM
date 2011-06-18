@@ -3,7 +3,7 @@ require 'cromby_auth'
 class VwUser < ActiveRecord::Base
 
   validates :new_password, :confirmation => true
-  attr_accessor :old_password, :new_password, :new_password_confirmation
+  attr_accessor :old_password, :new_password, :new_password_confirmation, :user_uuid
   
   #attr_readonly :user_name, :user_uuid
   
@@ -14,7 +14,7 @@ class VwUser < ActiveRecord::Base
   def self.authenticate(user_name, password)
     user = self.find_by_user_name(user_name)
     if user
-      if CrombyAuth.user_uuid(user_name, password, user.salt)
+      if user.user_uuid = CrombyAuth.user_uuid(user_name, password, user.salt)
         user
       else
         user = nil
