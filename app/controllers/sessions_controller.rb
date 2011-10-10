@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
     if user = VwUser.authenticate(params[:user_name], params[:password])
       if user.account_locked
         clear_session
-        redirect_to login_url, :notice => "Your account has been locked, please contact your System Administrator"
+        redirect_to log_in_path, :notice => "Your account has been locked, please contact your System Administrator"
       elsif user.days_until_password_expiry < 0
         clear_session
         flash[:notice] = "Password has expired, please update"
@@ -23,13 +23,13 @@ class SessionsController < ApplicationController
       end
     else
       clear_session
-      redirect_to login_url, :notice => "Invalid logon"
+      redirect_to log_in_path, :notice => "Invalid logon"
     end
   end
 
   def destroy
     clear_session
-    redirect_to login_url, :notice => "Logged out"
+    redirect_to log_in_path, :notice => "Logged out"
   end
 
 private

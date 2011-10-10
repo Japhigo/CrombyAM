@@ -1,20 +1,15 @@
 CrombyAM::Application.routes.draw do
 
+  #get "home/index"
+
+  get "log_out" => "sessions#destroy", :as => "log_out"
+  get "log_in" => "sessions#new", :as => "log_in"
+
   resources :genders
-
   resources :ref_data_tables, :only => [:index, :show, :edit, :update]
-
   resources :vw_users, :only => [:edit, :update]
-
-  match 'exit' => 'sessions#destroy', :as => :logout
+  resources :sessions
   
-  controller :sessions do
-    get 'login' => :new
-    post 'login' => :create
-  end
-
-  get "home/index"
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

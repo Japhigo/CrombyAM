@@ -19,7 +19,7 @@ class VwUsersController < ApplicationController
         flash[:notice] = "Your password has been changed."
         format.html { redirect_to :controller => "home" }
       else
-        format.html { render :action => "edit" }
+        render "edit"
       end
     end
   end

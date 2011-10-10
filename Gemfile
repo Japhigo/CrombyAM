@@ -1,6 +1,8 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.8'
+gem 'rails', '3.1.1'
+
+gem "bcrypt-ruby", :require => "bcrypt"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -23,6 +25,8 @@ platforms :jruby do
   gem 'activerecord-jdbcpostgresql-adapter'
 
 end
+
+gem "bcrypt-ruby", :require => "bcrypt"
 
 group :development do
   gem "rspec-rails", "~> 2.4"
